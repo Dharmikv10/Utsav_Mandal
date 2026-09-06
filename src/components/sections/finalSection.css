@@ -1,0 +1,46 @@
+.final-section {
+  position: relative;
+  text-align: center;
+  overflow: hidden;
+}
+
+.final-glow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 65%, rgba(255, 138, 61, 0.18), transparent 60%);
+}
+
+.final-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.final-title {
+  font-family: var(--font-en-display);
+  font-size: clamp(1.8rem, 5vw, 3rem);
+  color: var(--cream);
+  max-width: 20ch;
+  margin-top: 0.5rem;
+}
+
+.final-mantra {
+  font-size: clamp(2.2rem, 6vw, 3.4rem);
+  color: var(--saffron-soft);
+  text-shadow: 0 0 40px rgba(255, 138, 61, 0.4);
+}
+
+.final-line {
+  font-style: italic;
+  color: var(--cream-dim);
+  font-size: 1.1rem;
+}
+
+.final-host {
+  margin-top: 1rem;
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  color: var(--gold);
+  text-transform: uppercase;
+}

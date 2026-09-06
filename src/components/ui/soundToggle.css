@@ -1,0 +1,63 @@
+.sound-toggle {
+  position: fixed;
+  top: clamp(1rem, 3vw, 2rem);
+  right: clamp(1rem, 3vw, 2rem);
+  z-index: 60;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  border: 1px solid rgba(242, 203, 124, 0.35);
+  background: rgba(12, 7, 5, 0.5);
+  backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color 0.3s ease, transform 0.3s ease;
+}
+
+.sound-toggle:hover {
+  border-color: rgba(242, 203, 124, 0.9);
+  transform: scale(1.06);
+}
+
+.sound-bars {
+  display: flex;
+  align-items: flex-end;
+  gap: 3px;
+  height: 16px;
+}
+
+.sound-bars i {
+  display: block;
+  width: 3px;
+  border-radius: 2px;
+  background: var(--gold-bright, #f2cb7c);
+  height: 6px;
+  opacity: 0.5;
+}
+
+.sound-bars.is-playing i {
+  animation: bar-bounce 1s ease-in-out infinite;
+}
+
+.sound-bars.is-playing i:nth-child(1) {
+  animation-delay: 0s;
+}
+.sound-bars.is-playing i:nth-child(2) {
+  animation-delay: 0.15s;
+}
+.sound-bars.is-playing i:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+@keyframes bar-bounce {
+  0%,
+  100% {
+    height: 6px;
+    opacity: 0.6;
+  }
+  50% {
+    height: 16px;
+    opacity: 1;
+  }
+}

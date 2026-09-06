@@ -1,0 +1,66 @@
+.aagman-section {
+  position: relative;
+  background: linear-gradient(180deg, var(--ink) 0%, var(--maroon-deep) 50%, var(--ink) 100%);
+  overflow: hidden;
+}
+
+.aagman-bars {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  gap: clamp(0.6rem, 2vw, 1.4rem);
+  padding-bottom: 0;
+  z-index: 1;
+  opacity: 0.35;
+}
+
+.aagman-bars span {
+  width: clamp(6px, 1.2vw, 12px);
+  height: 40%;
+  background: linear-gradient(180deg, var(--saffron), transparent);
+  animation: bar-rhythm 1.6s ease-in-out infinite;
+  transform-origin: bottom;
+}
+
+@keyframes bar-rhythm {
+  0%,
+  100% {
+    transform: scaleY(0.3);
+  }
+  50% {
+    transform: scaleY(1);
+  }
+}
+
+.aagman-inner {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.9rem;
+  position: relative;
+  z-index: 2;
+}
+
+.aagman-title {
+  font-size: clamp(1.6rem, 4.5vw, 2.6rem);
+  color: var(--gold-bright);
+}
+
+.aagman-en {
+  font-family: var(--font-en-display);
+  font-size: clamp(3rem, 14vw, 9rem);
+  letter-spacing: 0.08em;
+  color: var(--saffron);
+  line-height: 0.9;
+  text-shadow: 0 0 60px rgba(255, 138, 61, 0.4);
+}
+
+.aagman-detail {
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  color: var(--cream-dim);
+  letter-spacing: 0.03em;
+}

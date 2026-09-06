@@ -1,0 +1,39 @@
+.community-section {
+  background: radial-gradient(ellipse at 50% 30%, rgba(255, 185, 48, 0.07), transparent 60%);
+}
+
+.community-inner {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.community-title {
+  font-size: clamp(1.6rem, 4.5vw, 2.4rem);
+  color: var(--gold-bright);
+  max-width: 20ch;
+}
+
+.community-text {
+  font-family: var(--font-en-display);
+  font-size: clamp(1.6rem, 4vw, 2.2rem);
+  color: var(--saffron-soft);
+}
+
+.community-sub {
+  max-width: 48ch;
+  color: var(--cream-dim);
+  font-size: clamp(1rem, 2vw, 1.15rem);
+  line-height: 1.7;
+}
+
+.community-diyas {
+  display: flex;
+  gap: clamp(0.6rem, 2vw, 1.4rem);
+  margin-top: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-end;
+}

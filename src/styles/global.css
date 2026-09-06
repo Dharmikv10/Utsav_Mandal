@@ -1,0 +1,157 @@
+:root {
+  /* Palette — deep temple night, saffron, marigold, antique gold, maroon */
+  --ink: #0c0705;
+  --ink-2: #150c08;
+  --maroon: #3a0d10;
+  --maroon-deep: #260609;
+  --saffron: #ff8a3d;
+  --saffron-soft: #ffb168;
+  --marigold: #ffb930;
+  --gold: #d4a544;
+  --gold-bright: #f2cb7c;
+  --ember: #ff5a36;
+  --cream: #f3e6d0;
+  --cream-dim: #cdb999;
+  --smoke: rgba(243, 230, 208, 0.06);
+
+  --font-dev-display: "Yatra One", "Tiro Devanagari Marathi", serif;
+  --font-dev-body: "Tiro Devanagari Marathi", serif;
+  --font-en-display: "Marcellus", serif;
+  --font-en-body: "Cormorant Garamond", serif;
+
+  --ease-silk: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-soft: cubic-bezier(0.16, 0.84, 0.44, 1);
+
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--ink);
+  color: var(--cream);
+  overflow-x: hidden;
+}
+
+body {
+  font-family: var(--font-en-body);
+  font-size: 18px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+#root {
+  position: relative;
+}
+
+::selection {
+  background: var(--saffron);
+  color: var(--ink);
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+}
+
+p {
+  margin: 0;
+}
+
+a {
+  color: inherit;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.dev {
+  font-family: var(--font-dev-display);
+}
+
+.dev-body {
+  font-family: var(--font-dev-body);
+}
+
+.eyebrow {
+  font-family: var(--font-en-body);
+  font-style: italic;
+  font-size: 0.95rem;
+  letter-spacing: 0.08em;
+  color: var(--cream-dim);
+}
+
+.section {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: clamp(2.5rem, 6vw, 6rem) clamp(1.25rem, 5vw, 4rem);
+  z-index: 2;
+}
+
+.section-inner {
+  max-width: 1100px;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.grain {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 40;
+  opacity: 0.05;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+.vignette {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 30;
+  background: radial-gradient(
+    ellipse at center,
+    transparent 45%,
+    rgba(5, 2, 1, 0.55) 100%
+  );
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* custom scrollbar, subtle */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(var(--saffron), var(--maroon));
+  border-radius: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--ink);
+}
